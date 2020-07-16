@@ -1,0 +1,45 @@
+<ion-view view-title="Customer Birthday">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <ion-item class="item button-small">
+                <span class="dspLabel">เดือนที่เลือก :</span>&nbsp;
+                <span class="dspValue">{{selMonth}} ({{selMM}})</span>
+            </ion-item>
+            <ion-item class="item button-small">
+                <span class="dspLabel">เฉพาะกรมธรรม์ที่มีผลบังคับ :</span>&nbsp;
+                <span class="dspValue">{{selInforced}}</span>
+            </ion-item>
+            <ion-item class="item button-small">
+                <span class="dspLabel">กรมธรรม์ของตัวแทนใต้สังกัด :</span>&nbsp;
+                <span class="dspValue">{{selIncluded}}</span>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right" 
+            collection-repeat="policy in policies | filter:search.value | limitTo:listlength" 
+            collection-item-height="170" collection-item-width="100%" 
+            ng-href="#/menu/policydetail/{{policy.POLID}}/{{policy.POLTYPE}}/{{srcId}}">
+                <span class="dspLabel-ss">กรมธรรม์ : </span><span class="dspValue-ss">{{policy.POLID}}  ({{policy.POLTYPE}})</span> &nbsp;&nbsp;
+                <span class="dspLabel-ss">วันเกิด : </span><span class="dspValue-ss">{{policy.INSUREDBDT}}</span>
+                <br />
+                <span class="dspLabel-ss">ผู้ถือกรมธรรม์ : </span><span class="dspValue-ss">{{policy.OWNERNM}}</span>
+                <br />
+                <span class="dspLabel-ss">ที่อยู่ : </span><span class="dspValue-ss">{{policy.ADDRESS}}</span>
+                <br />
+                <span class="dspLabel-ss">เบอร์โทรศัพท์: </span><span class="dspValue-ss">{{policy.TELNO}}</span>
+                <br />
+                <span class="dspLabel-ss">เบี้ยประกัน : </span><span class="dspValue-ss">{{policy.MODEPREM}}</span> &nbsp;&nbsp;
+                <span class="dspLabel-ss">สถานะ : </span><span class="dspValue-ss">{{policy.POLCSTS}}</span>
+                <br />
+                <span class="dspLabel-ss">ตัวแทนผู้ให้บริการ : </span><span class="dspValue-ss">{{policy.SERVAGTNM}}</span>
+                <br />
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=policies.length" on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

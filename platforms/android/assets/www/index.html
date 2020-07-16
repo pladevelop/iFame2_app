@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <!-- UI Libs 
+    <script src="js/bootstrap.js"></script>
+        -->
+    <!-- App Scripts -->
+    <!--
+    <script src="javascript/datetime.js"></script>
+    -->
+    <!-- App libs -->
+    <!-- App libs #1 - app level -->
+    <script src="app/ifame-appdb.js"></script>
+    <script src="app/ifame-app.js"></script>
+    <script src="app/ifame-globals.js"></script>
+    <!-- App libs #2 - app state or router -->
+    <script src="app/ifame-state.js"></script>
+    <!-- App libs #3 - app directives -->
+    <script src="directives/ifame-directives.js"></script>
+    <!-- App libs #4 - app services -->
+    <script src="services/datetime-factory.js"></script>
+    <script src="services/http-factory.js"></script>
+    <script src="services/shared-factory.js"></script>
+    <script src="services/login-factory.js"></script>
+    <script src="services/session-factory.js"></script>
+    <script src="services/policy-factory.js"></script>
+    <script src="services/announce-factory.js"></script>
+    <script src="services/team-factory.js"></script>
+    <script src="services/st5-factory.js"></script>
+    <script src="services/product-factory.js"></script>
+    <script src="services/customer-factory.js"></script>
+    <script src="services/training-factory.js"></script>
+    <script src="services/user-factory.js"></script>
+    <script src="services/download-factory.js"></script>
+    <!-- App libs #5 - app controler -->
+    <script src="controllers/ifame-controllers.js"></script>
+    <script src="controllers/home-controllers.js"></script>
+    <script src="controllers/policy-controllers.js"></script>
+    <script src="controllers/announce-controllers.js"></script>
+    <script src="controllers/team-controllers.js"></script>
+    <script src="controllers/product-controllers.js"></script>
+    <script src="controllers/customer-controllers.js"></script>
+    <script src="controllers/st5-controllers.js"></script>
+    <script src="controllers/training-controllers.js"></script>
+    <script src="controllers/user-controllers.js"></script>
+    <script src="controllers/download-controllers.js"></script>
+</head>
+
+<body ng-app="ifameApp" class="platform-android platform-cordova platform-webview">
+    <ion-nav-bar class="my-pla-blue" align-title="center">
+        <ion-nav-back-button class="button-icon ion-ios-arrow-left">
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view animation="no-animation"></ion-nav-view>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<ion-view view-title="Download-Forms">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right" collection-repeat="doc in docs | filter:search.value | limitTo:listlength" collection-item-height="70" collection-item-width="100%" ng-click="openPDF(doc.form)">
+                <span class="dspLabel-ss">{{doc.codefm}}</span>
+                <br />
+                <span class="dspValue-ss">{{doc.namefm}}</span>
+                <br />
+                <i class="icon ion-ios-arrow-right button-small"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=docs.length" on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

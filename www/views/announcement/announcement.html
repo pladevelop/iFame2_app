@@ -1,0 +1,39 @@
+<!--
+    NUMBER
+    TYPE
+    BOOK
+    DOCDATE
+    SUBJECT
+    FILEPATH
+-->
+<ion-view view-title="Announcement">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        เลือกปี
+                    </div>
+                    <select ng-model="selYear" 
+                    ng-options="year as year.id for year in years"
+                    ng-change="reload(selYear)">
+                    </select>
+                </label>
+            </div>
+            <div class="bar item-input-inset">
+                <ion-search placeholder="Search Announcement" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right" collection-repeat="doc in docs | filter:search.value | limitTo:listlength" collection-item-height="90" collection-item-width="100%" href="" ng-click="openPDF(doc.FILEPATH)">
+                <p><span class="dspLabel">ประเภท : </span>
+                    <span class="dspValue">{{ doc.TYPE === "1" ? "ประกาศ" : ( doc.TYPE === "2" ? "คำสั่ง" : "กจก/กจญ") }}</span>
+                    <span class="dspValue">  {{doc.BOOK}}</span>
+                </p>
+                <p><span class="dspLabel">เรื่อง : </span><span class="dspValue">{{doc.SUBJECT}}</span></p>
+                <p><span class="dspLabel">วันที่ : </span><span class="dspValue">{{doc.DOCDATE}}</span></p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=docs.length" on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

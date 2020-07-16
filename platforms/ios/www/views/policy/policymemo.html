@@ -1,0 +1,22 @@
+<ion-view view-title="Policy-Memo">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search Policy" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right button-small" 
+            collection-repeat="policy in policies | filter:search.value | limitTo:listlength" 
+            collection-item-height="130" collection-item-width="100%" 
+            ng-click="openPDF(policy.FILEPATH)">
+                <span class="dspLabel-s">กรมธรรม์ : </span><span class="dspValue-s">{{policy.POLID}}</span><br/ >
+                <span class="dspLabel-s">ประเภท : </span><span class="dspValue-s">{{policy.TYPE}}</span><br />
+                <span class="dspLabel-s">วันที่ : </span><span class="dspValue-s">{{policy.DOCDATE}}</span><br />
+                <span class="dspLabel-s">หมายเหตุ : </span><span class="dspValue-s">{{policy.REMARK}}</span><br />
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=policies.length" 
+            on-infinite="loadMore()" distance="3%">
+      </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

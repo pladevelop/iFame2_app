@@ -1,0 +1,26 @@
+<ion-view view-title="Change Password">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">รหัสผ่านเก่า</span>
+                <input type="password" ng-model="password.passwordCd" placeholder="รหัสผ่านเก่า">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">รหัสผ่านใหม่</span>
+                <input type="password" ng-model="password.newpassword_1" placeholder="รหัสผ่านใหม่">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">ใส่รหัสผ่านใหม่อีกครั้ง</span>
+                <input type="password" ng-model="password.newpassword_2" placeholder="รหัสผ่านใหม่อีกครั้ง">
+            </label>
+            <button class="button button-block my-pla-blue" ng-click="changepwd(password.passwordCd,password.newpassword_1,password.newpassword_2)">ตกลง</button> 
+        </div>
+        <!--
+        <div>
+            <button class="button button-positive">
+                Change Data
+            </button>
+        </div>
+    -->
+    </ion-content>
+</ion-view>

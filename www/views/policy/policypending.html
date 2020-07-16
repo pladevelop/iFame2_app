@@ -1,0 +1,31 @@
+<ion-view view-title="Policy-Pending">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div class="list">
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search Policy" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right"
+                ng-repeat="policy in policies | filter:search.value"
+                ng-href="#/menu/policydetail/{{policy.POLID}}/{{policy.POLTYPE}}/{{srcId}}">
+                <!--
+                <div class="row">
+                    <div class="col-10 dspLabel-s">Policy No:</div>
+                    <div class="col dspValue-s">{{policy.POLID}}  ({{policy.POLTYPE}})</div>
+                </div>
+                <div class="row">
+                    <div class="col-10 dspLabel-s">Insure Name:</div>
+                    <div class="col dspValue-s">{{policy.CLINAM}} {{policy.CLISNM}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-10 dspLabel-s">Status:</div>
+                    <div class="col dspValue-s">{{policy.POLCSTS}}</div>
+                </div>
+                -->
+                <p><span class="dspLabel">กรมธรรม์ : </span><span class="dspValue">{{policy.POLID}}  ({{policy.POLTYPE}})</span></p>
+                <p><span class="dspLabel">ชื่อผู้เอาประกัน : </span><span class="dspValue">{{policy.CLINAM}} {{policy.CLISNM}}</span></p>
+                <p><span class="dspLabel">สถานะ : </span><span class="dspValue">{{policy.POLCSTS}}</span></p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </div>
+    </ion-content>
+</ion-view>

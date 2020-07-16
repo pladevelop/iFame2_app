@@ -1,0 +1,19 @@
+<ion-view view-title="Change E-mail">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">อีเมลล์เก่า</span>
+                <input type="text" ng-model="email.email" placeholder="อีเมลล์เก่า">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">อีเมลล์ใหม่</span>
+                <input type="text" ng-model="email.newemail_1" placeholder="อีเมลล์ใหม่">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">ใส่อีเมลล์ใหม่อีกครั้ง</span>
+                <input type="text" ng-model="email.newemail_2" placeholder="ใส่อีเมลล์ใหม่อีกครั้ง">
+            </label>
+            <button class="button button-block my-pla-blue" ng-click="changeemail(email.email,email.newemail_1,email.newemail_2)">ตกลง</button> 
+        </div>
+    </ion-content>
+</ion-view>

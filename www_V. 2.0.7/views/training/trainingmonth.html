@@ -1,0 +1,18 @@
+<ion-view view-title="Training">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <ion-item class="item item-divider">
+                <h3>Training Program for Month</h3>
+            </ion-item>
+            <ion-item class="item item-icon-right" ng-repeat="train in trains" ng-click="openPDF(train.FILEPATH)">
+                <p><span class="dspLabel">Month: </span>
+                    <span class="dspValue">{{train.MONTH}}</span>
+                </p>
+                <p><span class="dspLabel">Remark: </span>
+                    <span class="dspValue">{{train.REMARK}}</span>
+                </p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,84 @@
+<ion-view view-title="Team-Agent">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div>
+            <h3>Agent Id: {{agCode}} ({{agGroup}})</h3>
+        </div>
+        <div>
+            <ion-list>
+                <ion-item class="item item-icon-right button-small item-calm" ng-click="showPolPending(agCode,agGroup)">
+                    <h4>Show Policy Pending</h4>
+                    <p>List Pending Policies.</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+                <ion-item class="item item-icon-right button-small item-calm" ng-click="showPolInforce(agCode,agGroup)">
+                    <h4>Show Policy Inforce</h4>
+                    <p>List Inforced and Terminated Policies.</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+            </ion-list>
+        </div>
+        <br />
+        <div>
+            <ion-list>
+                <ion-item class="item item-divider button-small">Personal Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Agent Code:</span>&nbsp;
+                    <span class="dspValue">{{agCode}} ({{agtinfo2.position_code}}-{{agtinfo2.position_text}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Agent Name:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.title_text}} {{agtinfo2.name}} {{agtinfo2.surname}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Company-eMail (AGREC):</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.coperate_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Personal-eMail (AGREC):</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.personal_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Tel:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.mobile_phone}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Agent Status:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.status_text}} ({{agtinfo2.status_date}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Branch:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.branch_cd}} ({{agtinfo2.branch_text}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Agent License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">License No:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license}} ({{agtinfo2.agent_license_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Start-Expire Date:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license_start_Date}} - ({{agtinfo2.agent_license_expire_Date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Single License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">License No:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitLink_license}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Start-Expire Date:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitlink_start_date}} - ({{agtinfo2.unitlink_expire_date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Non-Med License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">License No:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_license}} ({{agtinfo2.nonmed_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">Start-Expire Date:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_start_date}} - ({{agtinfo2.nonmed_expire_date}})</span>
+                </ion-item>
+            </ion-list>
+        </div>
+        <br />
+        <br />
+    </ion-content>
+</ion-view>

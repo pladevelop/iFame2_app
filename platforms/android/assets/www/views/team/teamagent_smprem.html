@@ -1,0 +1,110 @@
+<ion-view view-title="Team-Agent-SubmitPrem">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div>
+            <h3>Agent Id: {{agCode}} ({{agGroup}})</h3>
+        </div>
+         <div class="row header">
+                  <div class="col col-20"><strong>รายงานเบี้ยนำส่ง</strong></div>
+                  <div class="col "><strong>ประจำวัน</strong></div>
+                  <div class="col "><strong>ยอดสะสมประจำเดือน</strong></div>
+            </div>
+            <div class="row header">
+                  <div class="col"><strong>ประเภท กธ.</strong></div>
+                  <div class="col"><strong>จำนวน กธ.</strong></div>
+                  <div class="col"><strong>เบี้ยนำส่งทั้งหมด</strong></div>
+                  <div class="col"><strong>จำนวน กธ. สะสม</strong></div>
+                  <div class="col"><strong>เบี้ยนำส่งสะสม</strong></div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.ob_type}}</strong></div>
+                  <div class="col">{{smprems.ob_case_day}}</div>
+                  <div class="col">{{smprems.ob_amt_day}}</div>
+                  <div class="col">{{smprems.ob_case_mth}}</div>
+                  <div class="col">{{smprems.ob_amt_mth}}</div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.pa_type}}</strong></div>
+                  <div class="col">{{smprems.pa_case_day}}</div>
+                  <div class="col">{{smprems.pa_amt_day}}</div>
+                  <div class="col">{{smprems.pa_case_mth}}</div>
+                  <div class="col">{{smprems.pa_amt_mth}}</div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.gb_type}}</strong></div>
+                  <div class="col">{{smprems.gb_case_day}}</div>
+                  <div class="col">{{smprems.gb_amt_day}}</div>
+                  <div class="col">{{smprems.gb_case_mth}}</div>
+                  <div class="col">{{smprems.gb_amt_mth}}</div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.tt_type}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_case_day}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_amt_day}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_case_mth}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_amt_mth}}</strong></div>
+           </div>
+        <br />
+        <div>
+            <ion-list>
+                <ion-item class="item item-divider button-small">Personal Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">รหัสตัวแทน :</span>&nbsp;
+                    <span class="dspValue">{{agCode}} ({{agtinfo2.position_code}}-{{agtinfo2.position_text}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">ชื่อ นามสกุล:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.title_text}} {{agtinfo2.name}} {{agtinfo2.surname}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">อีเมล์บริษัท :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.coperate_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">อีเมล์ส่วนตัว :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.personal_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เบอร์มือถือ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.mobile_phone}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">สถานะ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.status_text}} ({{agtinfo2.status_date}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">สาขา :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.branch_cd}} ({{agtinfo2.branch_text}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Agent License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติตัวแทน :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license}} ({{agtinfo2.agent_license_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license_start_Date}} - ({{agtinfo2.agent_license_expire_Date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Single License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitLink_license}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitlink_start_date}} - ({{agtinfo2.unitlink_expire_date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Non-Med License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_license}} ({{agtinfo2.nonmed_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_start_date}} - ({{agtinfo2.nonmed_expire_date}})</span>
+                </ion-item>
+            </ion-list>
+        </div>
+        <br />
+        <br />
+    </ion-content>
+</ion-view>

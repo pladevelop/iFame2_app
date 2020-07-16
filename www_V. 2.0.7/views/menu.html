@@ -1,0 +1,25 @@
+﻿<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable bar-positive" align-title="center">
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-arrow-left-c"></i> Back
+            </ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="right">
+        <ion-header-bar class="bar-stable bar-assertive">
+            <h1 class="title">Menu</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list ng-repeat="mnu in sideMenus">
+                <ion-item nav-clear menu-close ng-href="{{mnu.link}}">{{mnu.menuText}}</ion-item>
+            </ion-list>
+            <button class="button button-full icon-left ion-ios-close-outline" ng-click="logout()">Logout</button>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

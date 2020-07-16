@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Temporary Receipts - Pending">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search ST5" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right"
+                      collection-repeat="st5Pending in st5Pendings | filter:search.value | limitTo:listlength"
+                      collection-item-height="130" collection-item-width="100%"
+                      ng-href="#/menu/st5detail/{{st5Pending.TRNO}}/V">
+
+                <p><span class="dspLabel">เลขที่สท.5:</span><span class="dspValueV">{{st5Pending.TRNO}}  </span></p>
+                <p><span class="dspLabel">วันที่ทำการ: </span><span class="dspValue">{{st5Pending.TRANDT}}  </span></p>
+                <p><span class="dspLabel">วันที่เบิก  : </span><span class="dspValue">{{st5Pending.PROCDT}}</span></p>
+                <p><span class="dspLabel">สาขาที่เบิก : </span><span class="dspValue">{{st5Pending.BRNNM}}</span></p>
+                <p><span class="dspLabel">สถานะตรวจสอบ : </span><span class="dspValueV">{{st5Pending.VERIFYSTAT}}</span></p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=st5Pending.length"
+                             on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
+

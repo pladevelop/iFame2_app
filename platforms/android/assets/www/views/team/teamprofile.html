@@ -1,0 +1,116 @@
+<ion-view view-title="Team-Profile">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div>
+            <ion-list>
+                <ion-item class="item item-divider button-small">Personal Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">รหัสตัวแทน :</span>&nbsp;
+                    <span class="dspValue">{{agCode}} ({{agtinfo2.position_code}}-{{agtinfo2.position_text}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">ชื่อ นามสกุล :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.title_text}} {{agtinfo2.name}} {{agtinfo2.surname}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">อีเมล์บริษัท :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.coperate_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">อีเมล์ส่วนตัว :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.personal_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">อีเมล์ (WEB) :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo1.eMAIL}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เบอร์มือถือ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.mobile_phone}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">สถานะ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.status_text}} ({{agtinfo2.status_date}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">รหัสผู้บริหาร :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo1.AGTLNKCD}} ({{agtinfo1.AGTLNKRK}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">สาขา :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.branch_cd}} ({{agtinfo2.branch_text}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Agent License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติตัวแทน :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license}} ({{agtinfo2.agent_license_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license_start_Date}} - ({{agtinfo2.agent_license_expire_Date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Single License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitLink_license}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitlink_start_date}} - ({{agtinfo2.unitlink_expire_date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Non-Med License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_license}} ({{agtinfo2.nonmed_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_start_date}} - ({{agtinfo2.nonmed_expire_date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Agent Structure-Upline</ion-item>
+                <ion-item class="item button-small" ng-style="teams.LNKSVCD == agCode? {'background-color':'#F7F4E1'}:{}">
+                    <span class="dspLabel">SVP ({{teams.LNKSVCD}})</span>
+                    <br />
+                    <span class="dspValue">{{teams.RNKSVCD}} {{teams.SVNAME}} ({{teams.AGTSVCD}})</span>
+                </ion-item>
+                <ion-item class="item button-small" ng-style="teams.LNKVPCD == agCode? {'background-color':'#F7F4E1'}:{}" ng-show="teams.LNKVPCD != teams.LNKSVCD">
+                    <span class="dspLabel">VP ({{teams.LNKVPCD}})</span>
+                    <br />
+                    <span class="dspValue">{{teams.RNKVPCD}} {{teams.VPNAME}} ({{teams.AGTVPCD}})</span>
+                </ion-item>
+                <ion-item class="item button-small" ng-style="teams.LNKAVCD == agCode? {'background-color':'#F7F4E1'}:{}" ng-show="teams.LNKAVCD != teams.LNKVPCD">
+                    <span class="dspLabel">AVP ({{teams.LNKAVCD}})</span>
+                    <br />
+                    <span class="dspValue">{{teams.RNKAVCD}} {{teams.AVNAME}} ({{teams.AGTAVCD}})</span>
+                </ion-item>
+                <ion-item class="item button-small" ng-style="teams.LNKLDCD == agCode? {'background-color':'#F7F4E1'}:{}">
+                    <span class="dspLabel">AL ({{teams.LNKLDCD}})</span>
+                    <br />
+                    <span class="dspValue">{{teams.RNKLDCD}} {{teams.ALNAME}} ({{teams.AGTLDCD}})</span>
+                </ion-item>
+                <ion-item class="item button-small" ng-style="teams.LNKAGCD == agCode? {'background-color':'#F7F4E1'}:{}">
+                    <span class="dspLabel">AG ({{teams.LNKAGCD}})</span>
+                    <br />
+                    <span class="dspValue">{{teams.RNKAGCD}} {{teams.AGNAME}} ({{teams.AGTAGCD}})</span>
+                </ion-item>
+            </ion-list>
+            <br />
+            <ion-list>
+                <ion-item class="item item-divider button-small">
+                    <h3>Training Courses</h3>
+                </ion-item>
+                <ion-item class="item" ng-repeat="course in agtinfo3">
+                        <span class="dspLabel button-small">ชื่อหลักสูตร :</span>&nbsp;
+                        <span class="dspValue button-small">{{course.course_cd}}-{{course.course_name}}</span>
+                        <br />
+                        <span class="dspLabel button-small">วันที่เริ่ม/วันที่สิ้นสุด หลักสูตร :</span>&nbsp;
+                        <span class="dspValue button-small">{{course.start_date}}-{{course.finish_date}}</span>
+                        <br />
+                        <span class="dspLabel button-small">ผลการอบรม :</span>&nbsp;
+                        <span class="dspValue button-small">{{course.training_result_text}}</span>
+                </ion-item>
+            </ion-list>
+        </div>
+        <br />
+        <br />
+    </ion-content>
+</ion-view>

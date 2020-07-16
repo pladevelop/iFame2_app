@@ -1,0 +1,21 @@
+<ion-view view-title="Agent License">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <div class="bar item-input-inset">
+                <ion-search placeholder="Search" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-divider">
+                <h3>Agency Licensing</h3>
+            </ion-item>
+            <ion-item class="item item-icon-right button-small" ng-repeat="item in items | filter:search.value" ng-click="openPDF(item.FILEPATH)">
+                <p>
+                    <span class="dspValue">{{item.TOPIC}}</span>
+                </p>
+                <p>
+                    <span class="dspValue">{{item.TOPIC2}}</span>
+                </p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

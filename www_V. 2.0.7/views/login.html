@@ -1,0 +1,34 @@
+﻿<ion-view view-title="IFAME">
+    <!--
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">IFAME</h1>
+    </ion-header-bar>
+    -->
+    <ion-content>
+        <img class="my-imgLogo" src="img/logophillip.jpg" alt="logophillip" />
+        <div class="list list-inset my-center-wrapper">
+            <label class="item item-input">
+                <input type="text" ng-model="user.userId" placeholder="Enter User ID">
+            </label>
+            <label class="item item-input">
+                <input type="password" ng-model ="user.userPwd" placeholder="Enter Password">
+            </label>
+        </div>
+        <div class="my-center-wrapper">
+            <button class="button button-block button-positive" ng-click="login(user.userId,user.userPwd)">Login</button>
+            <!--
+            <p>Your input&nbsp;:&nbsp;{{user.userId}} - {{user.userPwd}}</p>
+            <a type="button" href="#/main">Login</a>
+            <p class="my-small-text" id="lblOnline">Internet Connection : n/a</p>
+            <p class="my-small-text">Forget Password? <a href="#/forget" style="text-decoration:none; color:#F3800F">click here...</a></p>
+        -->
+            <p class="my-small-text">By logging in, you are bound by the <a href="#/terms" class="showTermsInfo" style="text-decoration:none; color:#F3800F; font-weight:bold">Terms and Conditions</a></p>
+            <!--
+            <p class="my-small-text">Device Info : <a class="showDeviceInfo" href="#/device" style="text-decoration: none; color: #F3800F">click here...</a></p>
+            <p class="my-small-text" id="lblUsrIp">User IP Address : {{ip}}</p>
+            <p class="my-small-text" id="lblWebApi">Web API : {{apiurl}}</p>
+        -->
+            <p class="my-small-text" id="lblVersion">App Version : {{version}}</p>
+        </div>
+    </ion-content>
+</ion-view>

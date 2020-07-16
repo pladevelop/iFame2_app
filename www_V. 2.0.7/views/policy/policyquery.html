@@ -1,0 +1,26 @@
+<ion-view view-title="Policy Query">
+    <ion-content padding="true" scroll="true" scrollbar-y="true">
+        <div>
+            <h4>Select Condition</h4>
+        </div>
+        <div>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Policy ID</span>
+                    <input type="text" placeholder="Policy ID" ng-model="polId">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Insured Name</span>
+                    <input type="text" placeholder="Insured Name" ng-model="insuredNm">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Insured Surname</span>
+                    <input type="text" placeholder="Insured Surname" ng-model="insuredSn">
+                </label>
+            </div>
+            <button class="button button-block button-calm" ng-click="showPolicies(polId,insuredNm,insuredSn)">
+                Click to Search...
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

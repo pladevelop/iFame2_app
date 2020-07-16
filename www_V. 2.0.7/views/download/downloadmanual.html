@@ -1,0 +1,50 @@
+<ion-view view-title="Download-Manuals">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <ion-item class="item item-divider">
+                <h3>Marketing</h3>
+            </ion-item>
+            <ion-item class="item item-icon-right button-small" ng-repeat="mkdoc in mkdocs" ng-click="openPDF(mkdoc.filename)">
+                <span class="dspLabel">Code: </span>
+                <span class="dspValue">{{mkdoc.codefm}}</span>
+                <br />
+                <span class="dspLabel">Name: </span>
+                <span class="dspValue">{{mkdoc.namefm}}</span>
+                <br />
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <br />
+        <ion-list>
+            <ion-item class="item item-divider">
+                <h3>Underwriting</h3>
+            </ion-item>
+            <ion-item class="item item-icon-right button-small" ng-repeat="uwdoc in uwdocs" ng-click="openPDF(uwdoc.filename)">
+                <span class="dspLabel">Code: </span>
+                <span class="dspValue">{{uwdoc.codefm}}</span>
+                <br />
+                <span class="dspLabel">Name: </span>
+                <span class="dspValue">{{uwdoc.namefm}}</span>
+                <br />
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <br />
+        <ion-list>
+            <ion-item class="item item-divider">
+                <h3>Agency Records</h3>
+            </ion-item>
+            <ion-item class="item item-icon-right button-small" ng-repeat="agdoc in agdocs" ng-click="openPDF(agdoc.filename)">
+                <span class="dspLabel">Code: </span>
+                <span class="dspValue">{{agdoc.codefm}}</span>
+                <br />
+                <span class="dspLabel">Name: </span>
+                <span class="dspValue">{{agdoc.namefm}}</span>
+                <br />
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <br />
+        <br />
+    </ion-content>
+</ion-view>

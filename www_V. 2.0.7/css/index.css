@@ -1,0 +1,105 @@
+/* 
+    Created on : 1 พ.ย. 2557, 18:50:07
+    Author     : Noraraksa
+*/
+.my-center-wrapper {
+	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+.my-small-text {
+	font-size: 12px;
+}
+.my-inputwidth200 {
+	width: 200px;
+}
+.my-imgLogo {
+    margin: 40px auto 40px auto;
+	display: block;
+	width: 192px;
+	height: 57px;
+}
+.my-imgHeader {
+    max-width: 50px;
+    max-height: 50px;
+}
+.my-imgAbout {
+    max-width: 100px;
+    max-height: 100px;
+}
+.my-input-positive {
+    color: #3399ff;
+}
+/*
+#popupPanel-popup {
+    left: 0 !important;
+    right: auto !important;
+}
+#popupPanel {
+    width: 210px;
+    border: 1px solid #000;
+    border-right: none;
+    background: rgba(0,0,0,.5);
+    margin: -1px 0;
+}
+#popupPanel .ui-btn {
+    margin: 2em 15px;
+} 
+*/
+.my-collapselist.list .item.item-accordion {
+  line-height: 20px; /* 38px */
+  padding-top: 0px; /* 0px */
+  padding-bottom: 0px; /* 0px */
+  transition: 0.09s all linear; 
+}
+.my-collapselist.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.my-collapselist.list .item.item-accordion.ng-hide-add,
+.my-collapselist.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+/* list with search */
+.bar.item-input-inset .item-input-wrapper input {
+    width: 100%;
+}
+
+.search-wrapper-light {
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    background: none;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+    color: #ffffff;
+}
+/* display label and value*/
+.dspLabel {
+    font-weight: bolder;
+}
+.dspValue {
+    color: darkblue;
+}
+.dspLabel-s {
+    font-weight: bolder;
+    font-size: 14px;
+}
+.dspValue-s {
+    color: darkblue;
+    font-size: 14px;
+}
+.dspLabel-ss {
+    font-weight: bolder;
+    font-size: 12px;
+}
+.dspValue-ss {
+    color: darkblue;
+    font-size: 12px;
+}
+
+
+
+
+

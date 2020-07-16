@@ -1,0 +1,245 @@
+        Public Shared Function GetPolStatus(ByVal polsts As String, ByVal cond1 As String, ByVal cond2 As String, _
+                                     ByVal cond3 As String, ByVal ptd As String) As String
+            If Left(polsts, 1) = "P" Then
+                GetPolStatus = "Pending"
+                Exit Function
+            End If
+            Select Case Left(polsts, 1)
+                Case "1"
+                    GetPolStatus = "Prem.Pay"
+                Case "2"
+                    GetPolStatus = "Prem.Waive"
+                Case "3"
+                    GetPolStatus = "Paid Up"
+                Case "4"
+                    If cond3 = "P" Then
+                        GetPolStatus = "Paid Up(Single P.)"
+                    ElseIf Mid(cond1, 3, 3) = "ETI" Or Mid(cond1, 3, 3) = "   " Then
+                        GetPolStatus = "ETI"
+                    ElseIf Mid(cond1, 3, 3) = "RPU" Then
+                        GetPolStatus = "RPU"
+                    Else
+                        GetPolStatus = "Fully Paid Up"
+                    End If
+                Case "A"
+                    GetPolStatus = "Not Taken"
+                Case "B"
+                    GetPolStatus = "Lapsed"
+                Case "C"
+                    GetPolStatus = "Complete"
+                Case "D"
+                    If Left(polsts, 2) = "DC" Then
+                        GetPolStatus = "Decl(NB)"
+                    Else
+                        GetPolStatus = "Death"
+                    End If
+                Case "E"
+                    '	 if addzero(ptd) < addzero(now) then
+                    '       	     getpolstatus = "Foreclose" 
+                    '	  else
+                    '             getpolstatus = "Surrender" 
+                    '          end if
+
+                    If Mid(polsts, 2, 1) = "A" Then
+                        GetPolStatus = "Foreclose"
+                    ElseIf Mid(polsts, 2, 1) = "O" Then
+                        GetPolStatus = "Over Loan"
+                    Else
+                        GetPolStatus = "Surrender"
+                    End If
+                Case "F"
+                    GetPolStatus = "Matured"
+                Case "H"
+                    GetPolStatus = "Expired"
+                Case "R"
+                    If cond2 = "DC" Then
+                        GetPolStatus = "Decl(NB)"
+                    ElseIf cond2 = "FC" Then
+                        GetPolStatus = "Close(NB)"
+                    ElseIf cond2 = "NT" Then
+                        GetPolStatus = "NotTK(NB)"
+                    ElseIf cond2 = "PP" Then
+                        GetPolStatus = "PostP(NB)"
+                    Else
+                        GetPolStatus = "Rejected"
+                    End If
+                Case "T"
+                    GetPolStatus = "Replaced"
+                Case "W"
+                    GetPolStatus = "Vested Annually"
+                Case "X"
+                    GetPolStatus = "Converted"
+                Case "Y"
+                    GetPolStatus = "Void 180 Days"
+                Case "Z"
+                    GetPolStatus = "Void 2 Years"
+                Case "P"
+                    GetPolStatus = "Memo"
+                Case "N"
+                    GetPolStatus = "NotTK(NB)"
+                Case Else
+                    GetPolStatus = "Not Found"
+            End Select
+        End Function
+
+        -------------
+               'เลขที่กรมธรรม์ :
+        Public Property POLID As String
+        'วันที่สมัครทำประกัน :
+        Public Property APPSIGND As String
+        'สถานะกรมธรรม์ :
+        Public Property POLCSTS As String
+        'วันที่ปรับสถานะกรมธรรม์ :
+        Public Property STSCHGDTE As String
+        'ผู้เอาประกัน : 
+        Public Property INSUREDNM As String
+        'วัน/เดือน/ปี เกิด :
+        Public Property INSUREDBDT As String
+        'อายุ:
+        Public Property INSUREDAGE As String
+        'เพศ:
+        Public Property INSUREDSEX As String
+        'เลขที่บัตรประชาชน : 
+        Public Property INSUREDTAXID As String
+        'อาชีพ :
+        Public Property INSUREDOCCU As String
+        'แบบประกัน :
+        Public Property PLANDESC As String
+        'ทุนประกัน :
+        Public Property SUMINSURED As String
+        'ระยะเวลาชำระเบี้ย : 
+        Public Property BILLMODE As String
+        'กรมธรรม์มีผลบังคับตั้งแต่ :
+        Public Property ISSEFFDTE As String
+        'วันสิ้นสุดสัญญา : 
+        Public Property CEASEDTE As String
+        'วันที่ออกกรมธรรม์ :
+        Public Property PRTDATE As String
+        'วันที่สาขารับใบคำขอ :
+        Public Property BRRCVDT As String
+        'ผู้ชำระเบี้ยประกัน :
+        Public Property OWNERNM As String
+        'วัน/เดือน/ปี เกิด :
+        Public Property OWNERDT As String
+        'อายุ:
+        Public Property OWNERAGE As String
+        'เพศ:
+        Public Property OWNERSEX As String
+        'ที่อยู่ :
+        Public Property ADDRESS As String
+        'สาขาที่ให้บริการ : 
+        Public Property SERVBRN As String
+        'ตัวแทน : 
+        Public Property SERVAGTNM As String
+        'เลขที่ใบอนุญาต : 
+        Public Property AGTLICNO As String
+        'Mode Premium :
+        Public Property MODEPREM As String
+        'Misc Suspense :
+        Public Property MISCSUSP As String
+        'Premium Suspense :
+        Public Property PREMSUSP As String
+        'O/S Disbursement :
+        Public Property OSDISB As String
+        'PDF Suspense :
+        Public Property PDFSUSP As String
+        'Customer Receive Date : 
+        Public Property CUSTRCVDT As String
+        'End Date :
+        Public Property FLENDDT As String
+        'Payor Telephone
+        Public Property PAYORTEL As String
+
+                                            $scope.policy = [{
+                                        header: "POLICYHOLDER INFO",
+                                        items: [{
+                                            label: "Insured Name",
+                                            value: d.INSUREDNM + "  (" + d.INSUREDSEX + ")"
+                                        }, {
+                                            label: "BirthDate",
+                                            value: d.INSUREDBDT + "  (" + d.INSUREDAGE + ")"
+                                        }, {
+                                            label: "Personal ID",
+                                            value: d.INSUREDTAXID
+                                        }, {
+                                            label: "Occupation",
+                                            value: d.INSUREDOCCU
+                                        }, {
+                                            label: "Address",
+                                            value: d.ADDRESS
+                                        }]
+                                    }, {
+                                        header: "PAYOR INFO",
+                                        items: [{
+                                            label: "Payor Name",
+                                            value: d.OWNERNM
+                                        }, {
+                                            label: "BirthDate",
+                                            value: d.OWNERDT + "  (" + d.OWNERAGE + ")"
+                                        }]
+                                    }, {
+                                        header: "POLICY INFO",
+                                        items: [{
+                                            label: "Plan",
+                                            value: d.PLANDESC
+                                        }, {
+                                            label: "Effective Date",
+                                            value: d.ISSEFFDTE
+                                        }, {
+                                            label: "Issue Date",
+                                            value: d.PRTDATE
+                                        }, {
+                                            label: "Ceased Date",
+                                            value: d.CEASEDTE
+                                        }, {
+                                            label: "Status",
+                                            value: d.POLCSTS + " (" + d.STSCHGDTE + ")"
+                                        }, {
+                                            label: "Freelook End",
+                                            value: d.FLENDDT
+                                        }, {
+                                            label: "Bill Mode",
+                                            value: d.BILLMODE
+                                        }, {
+                                            label: "Modal Premium",
+                                            value: d.MODEPREM
+                                        }, {
+                                            label: "Premium Excess",
+                                            value: d.PREMSUSP
+                                        }]
+                                    }, {
+                                        header: "BRANCH/AGENT",
+                                        items: [{
+                                            label: "Branch",
+                                            value: d.SERVBRN
+                                        }, {
+                                            label: "Agent",
+                                            value: d.SERVAGTNM
+                                        }, {
+                                            label: "License No",
+                                            value: d.AGTLICNO
+                                        }]
+                                    }];
+
+
+                                                        if (readPolicy == false) {
+                        var promise = policyFactory.getPolDetails($scope.searchPolId);
+                        promise.success(function(d, status, headers, config, statusText) {
+                                //alert('OK' + JSON.stringify(data));
+                                if (d.length <= 0) {
+                                    sharedFactory.showMsg(msgTitle, "Policy detail not found!");
+                                } else {
+                                    readPolicy = true;
+                                };
+                            })
+                            .error(function(data, status, headers, config, statusText) {
+                                sharedFactory.showMsg(msgTitle, "error status=" + status + "<br />" +
+                                    "message=" + data + "<br />" +
+                                    "statusText=" + statusText);
+                            });
+                    } else {
+                        // otherwise
+                        $scope.dspItems = $scope.policy;
+                    };
+
+

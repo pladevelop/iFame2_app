@@ -1,0 +1,26 @@
+<ion-view view-title="Policy Under Query">
+    <ion-content padding="true" scroll="true" scrollbar-y="true">
+        <div>
+            <h4>ระบุเงื่อนไขในการค้นหา</h4>
+        </div>
+        <div>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">กรมธรรม์ </span>
+                    <input type="text" placeholder="Policy ID" ng-model="polId">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">ชื่อผู้เอาประกัน</span>
+                    <input type="text" placeholder="Insured Name" ng-model="insuredNm">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">นามสกุลผู้เอาประกัน</span>
+                    <input type="text" placeholder="Insured Surname" ng-model="insuredSn">
+                </label>
+            </div>
+            <button class="button button-block button-calm" ng-click="showPolicies(polId,insuredNm,insuredSn)">
+                ค้ น ห า . . .
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

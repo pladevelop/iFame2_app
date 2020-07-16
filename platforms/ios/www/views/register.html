@@ -1,0 +1,48 @@
+<ion-view view-title="Register Member">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">กรุณาระบุข้อมูลให้ครบถ้วน</span>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <input type="text" ng-model="rgst.name" placeholder="ชื่อ (ไม่ต้องมีคำนำหน้า)">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <input type="text" ng-model="rgst.surname" placeholder="นามสกุล">
+            </label> 
+           
+            <div class="item item-input-inset">
+                <div class="input-label">วันเดือนปีเกิด</div>
+                     <select class="ion-input-select-DD" ng-model="inpDay" > 
+                        <option value="">วัน</option>
+                        <option ng-repeat="(key, value) in DD" value="{{key}}">{{value}}</option>
+                     </select>-  
+                     <select class="ion-input-select"  ng-model="inpMonth">
+                        <option value="">เดือน</option>
+                        <option ng-repeat="(key, value) in MM" value="{{key}}">{{value}}</option>
+                     </select>-
+                     <select class="ion-input-select-YY"  ng-model="inpYear">
+                        <option value="">ปี</option>
+                        <option ng-repeat="(key, value) in YY" value="{{key}}">{{value}}</option>
+                     </select>
+            </div>
+ 
+            <label class="item item-input item-stacked-label">
+                <input type="text" ng-model="rgst.idcard" placeholder="เลขบัตรประจำตัวประชาชน">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <input type="text" ng-model="rgst.email" placeholder="อีเมลล์">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <input type="password" ng-model="rgst.passwordCd" placeholder="รหัสผ่าน">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <input type="password" ng-model="rgst.password1" placeholder="ใส่รหัสผ่านอีกครั้ง">
+            </label>
+            <button class="button button-block my-pla-blue" ng-click="register(rgst.name,
+             rgst.surname, inpDay,inpMonth,inpYear,rgst.idcard,rgst.email,rgst.passwordCd,rgst.password1)">ตกลง</button> 
+        </div>
+    </ion-content>
+</ion-view>
+ 

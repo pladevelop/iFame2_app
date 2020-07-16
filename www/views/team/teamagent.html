@@ -1,0 +1,84 @@
+<ion-view view-title="Team-Agent">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div>
+            <h3>Agent Id: {{agCode}} ({{agGroup}})</h3>
+        </div>
+        <div>
+            <ion-list>
+                <ion-item class="item item-icon-right button-small item-calm" ng-click="showPolPending(agCode,agGroup)">
+                    <h4>แสดงข้อมูลกรมธรรม์ที่รอการอนุมมัติ</h4>
+                    <p>ข้อมูลกรมธรรม์รอการอนุมัติ</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+                <ion-item class="item item-icon-right button-small item-calm" ng-click="showPolInforce(agCode,agGroup)">
+                    <h4>แสดงข้อมูลกรมธรรม์ที่มีผลบังคับ</h4>
+                    <p>ข้อมูลกรมธรรม์ที่มีผลบังคับและสิ้นสุด</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+            </ion-list>
+        </div>
+        <br />
+        <div>
+            <ion-list>
+                <ion-item class="item item-divider button-small">Personal Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">รหัสตัวแทน :</span>&nbsp;
+                    <span class="dspValue">{{agCode}} ({{agtinfo2.position_code}}-{{agtinfo2.position_text}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">ชื่อ นามสกุล:</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.title_text}} {{agtinfo2.name}} {{agtinfo2.surname}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">อีเมล์บริษัท :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.coperate_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">อีเมล์ส่วนตัว :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.personal_email}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เบอร์มือถือ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.mobile_phone}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">สถานะ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.status_text}} ({{agtinfo2.status_date}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">สาขา :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.branch_cd}} ({{agtinfo2.branch_text}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Agent License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติตัวแทน :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license}} ({{agtinfo2.agent_license_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.agent_license_start_Date}} - ({{agtinfo2.agent_license_expire_Date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Single License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitLink_license}}</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.unitlink_start_date}} - ({{agtinfo2.unitlink_expire_date}})</span>
+                </ion-item>
+                <ion-item class="item item-divider button-small">Non-Med License Info</ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">เลขใบอนุญาติ :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_license}} ({{agtinfo2.nonmed_type}})</span>
+                </ion-item>
+                <ion-item class="item button-small">
+                    <span class="dspLabel">วันที่เริ่ม/วันที่สิ้นสุด :</span>&nbsp;
+                    <span class="dspValue">{{agtinfo2.nonmed_start_date}} - ({{agtinfo2.nonmed_expire_date}})</span>
+                </ion-item>
+            </ion-list>
+        </div>
+        <br />
+        <br />
+    </ion-content>
+</ion-view>

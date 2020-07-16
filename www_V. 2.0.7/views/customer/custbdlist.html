@@ -1,0 +1,45 @@
+<ion-view view-title="Customer Birthday">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <ion-item class="item button-small">
+                <span class="dspLabel">Selected Month:</span>&nbsp;
+                <span class="dspValue">{{selMonth}} ({{selMM}})</span>
+            </ion-item>
+            <ion-item class="item button-small">
+                <span class="dspLabel">Only Inforced:</span>&nbsp;
+                <span class="dspValue">{{selInforced}}</span>
+            </ion-item>
+            <ion-item class="item button-small">
+                <span class="dspLabel">Include Downline:</span>&nbsp;
+                <span class="dspValue">{{selIncluded}}</span>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right" 
+            collection-repeat="policy in policies | filter:search.value | limitTo:listlength" 
+            collection-item-height="170" collection-item-width="100%" 
+            ng-href="#/menu/policydetail/{{policy.POLID}}/{{policy.POLTYPE}}/{{srcId}}">
+                <span class="dspLabel-ss">Policy No: </span><span class="dspValue-ss">{{policy.POLID}}  ({{policy.POLTYPE}})</span> &nbsp;&nbsp;
+                <span class="dspLabel-ss">Birthday: </span><span class="dspValue-ss">{{policy.INSUREDBDT}}</span>
+                <br />
+                <span class="dspLabel-ss">Policy Owner: </span><span class="dspValue-ss">{{policy.OWNERNM}}</span>
+                <br />
+                <span class="dspLabel-ss">Address: </span><span class="dspValue-ss">{{policy.ADDRESS}}</span>
+                <br />
+                <span class="dspLabel-ss">Tel: </span><span class="dspValue-ss">{{policy.TELNO}}</span>
+                <br />
+                <span class="dspLabel-ss">Mode Premium : </span><span class="dspValue-ss">{{policy.MODEPREM}}</span> &nbsp;&nbsp;
+                <span class="dspLabel-ss">Status : </span><span class="dspValue-ss">{{policy.POLCSTS}}</span>
+                <br />
+                <span class="dspLabel-ss">Service Agent : </span><span class="dspValue-ss">{{policy.SERVAGTNM}}</span>
+                <br />
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=policies.length" on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

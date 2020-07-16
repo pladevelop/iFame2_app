@@ -1,0 +1,28 @@
+﻿<ion-view view-title="รายละเอียดสท.5">
+    <ion-content padding="true" scroll="true" scrollbar-y="true">
+        <div>
+            <h3>สท.5 : {{TRNO}}</h3>
+            <p>
+                <div class="button-bar">
+                    <button class="button button-small" ng-click="ST5Info()"><strong>สท.5</strong></button>
+                    <button class="button button-small" ng-click="INVInfo()"><strong>ใบนำส่ง</strong></button>
+                    <button class="button button-small" ng-click="VERInfo()"><strong>ตรวจสอบสท.5</strong></button>
+                </div>
+            </p>
+        </div>
+        <div>
+            <ion-list>
+                <div ng-repeat="dspItem in dspItems">
+                    <ion-item class="item item-divider button-small">
+                        <span class="dspHeader"><strong>{{dspItem.header}} </strong></span>
+                    </ion-item>
+                    <ion-item class="item button-small" ng-repeat="item in dspItem.items">
+                        <span class="dspLabel">{{item.label}}: </span>
+                        <span class="dspValue">{{item.value}}</span>
+                    </ion-item>
+                </div>
+            </ion-list>
+        </div>
+        <br />
+    </ion-content>
+</ion-view>

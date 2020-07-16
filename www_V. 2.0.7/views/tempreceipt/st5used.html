@@ -1,0 +1,24 @@
+﻿<ion-view view-title="Temporary Receipts - Used">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search ST5" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right"
+                      collection-repeat="st5Used in st5Useds | filter:search.value | limitTo:listlength"
+                      collection-item-height="110" collection-item-width="100%"
+                      ng-href="#/menu/st5detail/{{st5Used.TRNO}}/U">
+
+                <p><span class="dspLabel">เลขที่สท.5:</span><span class="dspValueV">{{st5Used.TRNO}}  </span></p>
+                <p><span class="dspLabel">วันที่ทำการ: </span><span class="dspValue">{{st5Used.TRANDT}}  </span></p>
+                <p><span class="dspLabel">วันที่เบิก  : </span><span class="dspValue">{{st5Used.PROCDT}}</span></p>
+                <p><span class="dspLabel">สาขาที่เบิก : </span><span class="dspValue">{{st5Used.BRNNM}}</span></p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=st5Useds.length"
+                             on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
+

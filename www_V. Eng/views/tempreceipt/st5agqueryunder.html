@@ -1,0 +1,65 @@
+﻿<ion-view view-title="Agent-Under">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+            <ion-item class="item button-small" ng-click="changeLevel(1,level1)">
+                <p>
+                    <h3>
+                        <span>Level 1 - {{level1.name}}   </span>
+                        <span>({{level1.status}}) </span>
+                        <span>[{{level1.rank}}/{{level1.lnkrk}}]</span>
+                    </h3>
+                </p>
+            </ion-item>
+            <ion-item class="item button-small" ng-show="level2.show" ng-click="changeLevel(2,level2)">
+                <h3>
+                    <span>Level 2 - {{level2.name}}   </span>
+                    <span>({{level2.status}}) </span>
+                    <span>[{{level2.rank}}/{{level2.lnkrk}}]</span>
+                </h3>
+            </ion-item>
+            <ion-item class="item button-small" ng-show="level3.show" ng-click="changeLevel(3,level3)">
+                <h3>
+                    <span>Level 3 - {{level3.name}}   </span>
+                    <span>({{level3.status}}) </span>
+                    <span>[{{level3.rank}}/{{level3.lnkrk}}]</span>
+                </h3>
+            </ion-item>
+            <ion-item class="item button-small" ng-show="level4.show" ng-click="changeLevel(4,level4)">
+                <h3>
+                    <span>Level 4 - {{level4.name}}   </span>
+                    <span>({{level4.status}}) </span>
+                    <span>[{{level4.rank}}/{{level4.lnkrk}}]</span>
+                </h3>
+            </ion-item>
+            <ion-item class="item button-small" ng-show="level5.show" ng-click="changeLevel(5,level5)">
+                <h3>
+                    <span>Level 5 - {{level5.name}}   </span>
+                    <span>({{level5.status}}) </span>
+                    <span>[{{level5.rank}}/{{level5.lnkrk}}]</span>
+                </h3>
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search" filter="search"></ion-search>
+            </div>
+            <ion-item class="item item-icon-right" collection-repeat="ag in agents | filter:search.value | limitTo:listlength" collection-item-height="90" collection-item-width="100%" ng-href="" ng-click="changeAgent(ag)">
+                <p>
+                    <span class="dspLabel">Agent Code: </span>
+                    <span class="dspValue">{{ag.SERVAGTCD}}  (Status: {{ag.AGSTTUS}})</span>
+                </p>
+                <p>
+                    <span class="dspLabel">Agent Name: </span>
+                    <span class="dspValue">{{ag.SERVAGTNM}} {{ag.SERVAGTSN}}</span>
+                </p>
+                <p>
+                    <span class="dspLabel">Agent/Leader Rank: </span>
+                    <span class="dspValue">{{ag.AGTRANK}}/{{ag.AGTLNKRK}} ({{ag.AGTLNKCD}})</span>
+                </p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=agents.length" on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

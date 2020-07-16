@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Device Info">
+    <ion-content padding="true">
+        <h3>Device Info</h3>
+        <ul class="list">
+            <li class="item item-divider button-small"><span class="dspLabel">Application Info</span></li>
+            <li class="item item-text-wrap button-small" ng-repeat="info in appInfos">
+                <span class="dspLabel">{{info.header}}</span>&nbsp;<span class="dspValue">{{info.value}}</span>
+            </li>
+            <!--
+            <li class="item item-divider button-small"><span class="dspLabel">API Info</span></li>
+            <li class="item item-text-wrap button-small" ng-repeat="info in apiInfos">
+                <span class="dspLabel">{{info.header}}</span>&nbsp;<span class="dspValue">{{info.value}}</span>
+            </li>
+        -->
+            <li class="item item-divider button-small"><span class="dspLabel">User Info</span></li>
+            <li class="item item-text-wrap button-small" ng-repeat="info in usrInfos">
+                <span class="dspLabel">{{info.header}}</span>&nbsp;<span class="dspValue">{{info.value}}</span>
+            </li>
+            <li class="item item-divider button-small"><span class="dspLabel">Browser Info</span></li>
+            <li class="item item-text-wrap button-small" ng-repeat="info in browserInfos">
+                <span class="dspLabel">{{info.header}}</span>&nbsp;<span class="dspValue">{{info.value}}</span>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,1 @@
+{"plugins":["org.apache.cordova.device","org.apache.cordova.console","com.ionic.keyboard","cordova-plugin-inappbrowser","io.github.pwlin.cordova.plugins.fileopener2","cordova-plugin-whitelist","cordova-sqlite-storage","cordova-plugin-device","cordova-plugin-console","cordova-plugin-splashscreen","com.phonegap.plugins.PushPlugin"]}

@@ -1,0 +1,46 @@
+<ion-view view-title="Customer Birthday">
+    <ion-content padding="true" scroll="true" scrollbar-y="true">
+        <div>
+            <h4>Select Condition</h4>
+        </div>
+        <div>
+            <ion-list>
+                <ion-item class="item item-input item-select">
+                    <div class="input-label">
+                        Birthday Month
+                    </div>
+                    <select ng-model="inpMonth">
+                        <option selected>JAN</option>
+                        <option>FEB</option>
+                        <option>MAR</option>
+                        <option>APR</option>
+                        <option>MAY</option>
+                        <option>JUN</option>
+                        <option>JUL</option>
+                        <option>AUG</option>
+                        <option>SEP</option>
+                        <option>OCT</option>
+                        <option>NOV</option>
+                        <option>DEC</option>
+                    </select>
+                </ion-item>
+                <ion-item class="item item-checkbox item-checkbox-right">
+                    Only Inforced Policy
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="inpInforce.checked">
+                    </label>
+                </ion-item>
+                <ion-item class="item item-checkbox item-checkbox-right">
+                    Include Downline Policy
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="inpInclude.checked">
+                    </label>
+                </ion-item>
+            </ion-list>
+            <button class="button button-block button-calm" 
+            ng-click="getbdlist(inpMonth, inpInforce.checked, inpInclude.checked)">
+                Click to Search...
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

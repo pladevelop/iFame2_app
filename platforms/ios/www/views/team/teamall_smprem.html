@@ -1,0 +1,72 @@
+<ion-view view-title="Team-All-SubmitPrem">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <ion-list>
+                <!--
+            <div class="bar bar-header item-input-inset">
+                <ion-search placeholder="Search" filter="search"></ion-search>
+            </div>
+            --> 
+          
+            <div class="row header">
+                  <div class="col col-20"><strong>รายงานเบี้ยนำส่ง</strong></div>
+                  <div class="col "><strong>ประจำวัน</strong></div>
+                  <div class="col "><strong>ยอดสะสมประจำเดือน</strong></div>
+            </div>
+            <div class="row header">
+                  <div class="col"><strong>ประเภท กธ.</strong></div>
+                  <div class="col"><strong>จำนวน กธ.</strong></div>
+                  <div class="col"><strong>เบี้ยนำส่งทั้งหมด</strong></div>
+                  <div class="col"><strong>จำนวน กธ. สะสม</strong></div>
+                  <div class="col"><strong>เบี้ยนำส่งสะสม</strong></div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.ob_type}}</strong></div>
+                  <div class="col">{{smprems.ob_case_day}}</div>
+                  <div class="col">{{smprems.ob_amt_day}}</div>
+                  <div class="col">{{smprems.ob_case_mth}}</div>
+                  <div class="col">{{smprems.ob_amt_mth}}</div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.pa_type}}</strong></div>
+                  <div class="col">{{smprems.pa_case_day}}</div>
+                  <div class="col">{{smprems.pa_amt_day}}</div>
+                  <div class="col">{{smprems.pa_case_mth}}</div>
+                  <div class="col">{{smprems.pa_amt_mth}}</div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.gb_type}}</strong></div>
+                  <div class="col">{{smprems.gb_case_day}}</div>
+                  <div class="col">{{smprems.gb_amt_day}}</div>
+                  <div class="col">{{smprems.gb_case_mth}}</div>
+                  <div class="col">{{smprems.gb_amt_mth}}</div>
+           </div>
+           <div class="row Detail">
+                  <div class="col"><strong>{{smprems.tt_type}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_case_day}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_amt_day}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_case_mth}}</strong></div>
+                  <div class="col"><strong>{{smprems.tt_amt_mth}}</strong></div>
+           </div>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Search Condition</span>
+                    <input type="text" placeholder="Search" ng-model="searchAgent" style="color: blue;">
+                </label>
+            </div>
+            <ion-item class="item item-icon-right" collection-repeat="ag in agents | filter:searchAgent | limitTo:listlength" collection-item-height="90" collection-item-width="100%" ng-href="" ng-click="showAgentUnder(ag.SERVAGTCD)">
+                <p><span class="dspLabel">รหัสตัวแทน : </span>
+                    <span class="dspValue">{{ag.SERVAGTCD}}  (Status: {{ag.AGSTTUS}})</span>
+                </p>
+                <p><span class="dspLabel">ชื่อตัวแทน : </span>
+                    <span class="dspValue">{{ag.SERVAGTNM}} {{ag.SERVAGTSN}}</span>
+                </p>
+                <p><span class="dspLabel">Agent/Leader Rank: </span>
+                    <span class="dspValue">{{ag.AGTRANK}}/{{ag.AGTLNKRK}} ({{ag.AGTLNKCD}})</span>
+                </p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll ng-if="listlength<=agents.length" on-infinite="loadMore()" distance="3%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

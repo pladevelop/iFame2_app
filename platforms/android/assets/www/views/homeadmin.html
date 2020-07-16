@@ -1,0 +1,47 @@
+<ion-view view-title="Home-Admin">
+    <ion-content padding="true" scroll="true" scrollbar-y="true">
+        <div class="list card">
+            <img src="img/iFame-192p.png" alt='world' style="padding: 10px; width: 80px; height: 80px;" />
+            <!--
+            <ion-list>
+                <ion-item class="item item-icon-right item-text-wrap" ng-click="">
+                    <h2>Updates...</h2>
+                    <p>IFAME will be pre-launched in July at Mid-Year Conference in Pattaya.</p>
+                </ion-item>
+            </ion-list>
+        -->
+            <ion-list>
+                <ion-item class="item item-icon-right item-text-wrap button-small" ng-click="openWeb()" style="padding: 10px;">
+                    <h2>Today News...</h2>
+                    <p>{{todayNews}}</p>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+        </div>
+        <div>
+            <ion-list class="my-collapselist">
+                <div ng-repeat="menuGroup in menuGroups">
+                    <ion-item class="item-stable" ng-click="toggleGroup(menuGroup)" ng-class="{active: isGroupShown(menuGroup)}">
+                        <i class="icon" ng-class="isGroupShown(menuGroup) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
+                        <span>{{menuGroup.name}}</span>
+                    </ion-item>
+                    <ion-item class="item-accordion item-icon-left item-icon-right" ng-repeat="menuItem in menuGroup.items" ng-show="isGroupShown(menuGroup)" ng-click="gotoMenu(menuItem.link)">
+                        <i class="icon {{menuItem.icon}}"></i>
+                        <h3>{{menuItem.header}}</h3>
+                        <p>{{menuItem.text}}</p>
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </ion-item>
+                </div>
+            </ion-list>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div>
+            <p style="height: 40px;"></p>
+        </div>
+    </ion-content>
+</ion-view>

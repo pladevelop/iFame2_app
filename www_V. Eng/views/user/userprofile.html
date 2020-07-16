@@ -1,0 +1,33 @@
+<ion-view view-title="My Profile">
+    <ion-content padding="true" scroll="true" scrollbar-y="true" has-header="true">
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">User ID</span>
+                <input type="text" placeholder="user id" ng-model="user.userID" ng-style="{{styleInput}}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="youremail@domain.com" ng-model="user.eMAIL" ng-style="{{styleInput}}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Birth Date</span>
+                <input type="text" placeholder="birthdate" ng-model="user.AGTBRDT" ng-style="{{styleInput}}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Personal ID</span>
+                <input type="text" placeholder="personal id" ng-model="user.AGTCTID" ng-style="{{styleInput}}" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Status</span>
+                <input type="text" placeholder="status" ng-model="user.AGSTTUS" ng-style="{{styleInput}}" readonly>
+            </label>
+        </div>
+        <!--
+        <div>
+            <button class="button button-positive">
+                Change Data
+            </button>
+        </div>
+    -->
+    </ion-content>
+</ion-view>

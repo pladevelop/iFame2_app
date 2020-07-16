@@ -1,0 +1,19 @@
+﻿<ion-view view-title="Home">
+    <ion-content padding="true">
+        <h4>Hello, Home</h4>
+        <div class="list">
+            <div class="item item-divider">Policy Information</div>
+            <a class="item item-icon-left"  ng-repeat="menu in policyMenus" href="{{menu.link}}">
+                <i class="icon {{menu.icon}}"></i>
+                <h4>{{menu.header}}</h4>
+                <p>{{menu.text}}</p>
+            </a>
+            <div class="item item-divider">Team Information</div>
+            <a class="item item-icon-left" ng-repeat="menu in teamMenus" href="{{menu.link}}">
+                <i class="icon {{menu.icon}}"></i>
+                <h4>{{menu.header}}</h4>
+                <p>{{menu.text}}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
